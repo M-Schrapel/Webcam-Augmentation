@@ -23,6 +23,7 @@ import numpy as np
 import cv2
 import math
 
+
 """returns center of marker"""
 def getCenter(prev_res):
     xm=0
@@ -129,8 +130,12 @@ emojis[10]=img_emojihot
 prev_res=[]
 
 """Aruco markers"""
-dictionary = cv2.aruco.getPredefinedDictionary(cv2.aruco.DICT_6X6_250)
-parameters = cv2.aruco.DetectorParameters_create()
+try:
+	dictionary = cv2.aruco.getPredefinedDictionary(cv2.aruco.DICT_6X6_250)
+	parameters = cv2.aruco.DetectorParameters_create()
+except:
+	print("Please install module opencv-contrib-python via pip!")
+	exit()
 imgemoji= np.zeros([80,80,3])
 
 
@@ -180,7 +185,7 @@ while(True):
                     frame=emojiOverlay(frame , img_emoji , pos=center,scale=scale)
                     break
 
-    cv2.imshow('frame',frame)
+    cv2.imshow('Webcam',frame)
     
     """press q to stop webcam recording"""
     k = cv2.waitKey(1) % 256
