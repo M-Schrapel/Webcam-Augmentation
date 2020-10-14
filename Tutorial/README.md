@@ -1,41 +1,62 @@
-# PCL-Button-Feedback
+# Tutorial: Configuring OBS studio to create virtual cameras
+After completing this tutorial you can use the python output window as a virtual camera.  
 
+## Install OBS studio
+First download OBS studio and the virtual camera plug-in
 
-## OBS + Virtual-Camera-Plugin Tutorial
-In diesem Abschnitt soll das Setup für eine virtuelle Kamera beschrieben werden.
+- [OBS Studio](https://obsproject.com/)
+- [OBS virtual-camera-plugin](https://obsproject.com/forum/resources/obs-virtualcam.949/)
 
-1. Zunächst muss folgendes installiert werden:
-    * **OBS**: https://obsproject.com/de
-    * **OBS virtual-camera-plugin**: https://obsproject.com/forum/resources/obs-virtualcam.949/
-        * ___Hinweis___: Bei der Installation des Plugins kann die Anzahl der virtuellen Kameras bei 1 gelassen werden.
-        
-            ![](readme%20images/install.PNG)
-    
-2. Python-Skript ([detector.py](https://github.com/felixortmann/PCL-Button-Feedback/blob/master/detector.py)) starten. 
-Es muss eventuell der VideoCapture-Parameter angepasst werden, damit die
-korrekte Kamera ausgewählt wird. Es sollte sich ein Fenster öffnen mit dem augmentierten Webcamstream.
-3. OBS starten. Neue Quelle hinzufügen (__Quelle (rechtsklick) → Hinzufügen → Fensteraufnahme__).
-Name für das Fenster auswählen oder direkt bestätigen.
+![Step 1](/Step_01.jpg)
+Once you have selected your operating system, download and install OBS Studio first and then proceed with the virtual camera plug-in.
 
-    ![quelle](readme%20images/quelle.PNG)
+During the installation you will be asked to configure OSB studio.
+Select the virtual camera and proceed.
+![Step 2](/Step_02.jpg)
 
-4. Im neuen Fenster das OpenCV Fenster des Python-Skripts auswählen (Hier: __[python.exe] frame__). Bestätigen.
+You only need one virtual camera device - press next.
+![Step 3](/Step_03.jpg)
 
-    ![window](readme%20images/window.PNG)
+## Create Virtual Camera
+After installing OBS Studio open a terminal, download the repository and start the Python program.
+```sh
+$ git clone https://github.com/M-Schrapel/Webcam-Augmentation.git
+$ cd Webcam-Augmentation
+$ python .\emoji_webcam.py
+```
+If you have any errors check if you have installed the right modules.
+```sh
+$ pip install opencv-contrib-python
+$ pip install numpy
+```
+Your webcam should run now in a window created by python. You can stop the recording by pressing q. If you want to select a different webcam open emoji_webcam.py with a text editor and change the VIDEO_SOURCE in line 26. Now navigate to OBS studio again and press the right mouse button in the main window. To select the Python window for your virtual camera navigate to **Add → Window Capture**. 
+![Step 4](/Step_04.jpg)
 
-5. Obere Taskleiste: __Werkzeuge → VirtualCam__. Target Camera auf ***OBS-Camera2*** setzen. Klick auf **Start**.
+Simply press OK.
+![Step 5](/Step_05.jpg)
 
-    ![](readme%20images/obscam2.PNG)
-    
-6. Rechtsklick auf die in Schritt 3 neue Quelle/Fensteraufnahme, dann auf **Filter**.
+A new window should appear. Select the python window as shown below and press OK.
+![Step 6](/Step_06.jpg)
 
-    ![](readme%20images/filter.PNG)
-    
-7. Im neuen Fenster rechtsklick auf den **Effektfilter → Hinzufügen → VirtualCam**. Hier unter **Target Camera: OBS-Camera**
-auswählen und starten. Das wird der Name für die Videokonferenzen sein.
+Navigate to **Tools → Virtual Camera** in the  main window of OBS Studio. If you cannot see this option, you need to install the [OBS virtual-camera-plugin](https://obsproject.com/forum/resources/obs-virtualcam.949/).
+![Step 7](/Step_07.jpg)
 
-    ![](readme%20images/obscam1.PNG)
-    
-8. Beliebiges Videokonferenzsoftware öffnen und als Webcam OBS-Camera auswählen, z.B. BBB.
+A new window appears. Select the target camera OBS-Camera2 as shown below. Then, press Start and close this window.
+![Step 8](/Step_08.jpg)
 
-    ![](readme%20images/bbb.PNG)
+At the bottom on the main window you should see now an entry of the recorded window in Sources. Press the right mouse button and select filters.
+![Step 9](/Step_09.jpg)
+
+A new window appears in which you press the + on the right bottom corner. Then select the VirtualCam.
+![Step 10](/Step_10.jpg)
+
+On the right of this window, you can now set up the virtual camera. Select the target camera OBS-Camera2 and press Start. You can set the number of buffered frames to zero. Press Close and your virtual camera is ready for use.
+![Step 11](/Step_11.jpg)
+
+Start your preferred video chat program and select the OBS-Camera.
+If your program is not able to find a camera stop the Python window by pressing q, search for camera in your video chat program again, select the OBS-Camera and restart the Python script.
+```sh
+$ python .\emoji_webcam.py
+```
+
+Everything should work now. By bringing the Phyton window to the front you can augment the webcam stream. Use the ArUco marker with the green and black color to make movements smooth.
