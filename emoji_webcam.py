@@ -15,6 +15,10 @@ Press q to quit the program
 Press 0 to 9 or - to add emoji
 Press w to stop overlaying emojis
 
+Press + to increase the size of the shown emoji
+Press - to decrease the size of the shown emoji
+
+
 This code can help to show emotions with masks in video chats.
 I have used parts of my code to teach my students how prototyping and AR can support wearing masks.
 """
@@ -22,6 +26,13 @@ I have used parts of my code to teach my students how prototyping and AR can sup
 import numpy as np
 import cv2
 import math
+
+"""Configuration"""
+
+VIDEO_SOURCE = 0 # Number of webcam to use
+REZISE_PX = 240  # Size of the emoji in pixels
+SCALE = 4        # Initial scale of the emoji
+
 
 
 """returns center of marker"""
@@ -81,9 +92,11 @@ def isMarker(img , marker):
     return greenshare > 0.2
 
 """Opens webcam (set number according to your machine!)"""
-cap = cv2.VideoCapture(0)
-# stores the index of the selected emoji
+cap = cv2.VideoCapture(VIDEO_SOURCE)
+
+# stores the index of the actual selected emoji
 imgindex = -1
+
 """Load emojis"""
 img_emojilove=cv2.imread("Emojis/1F60D_color.png")
 img_emojitogune=cv2.imread("Emojis/1F61B_color.png")
@@ -96,20 +109,6 @@ img_emojikiss=cv2.imread("Emojis/1F618_color.png")
 img_emojiangry=cv2.imread("Emojis/1F620_color.png")
 img_emojilol=cv2.imread("Emojis/1F923_color.png")
 img_emojihot=cv2.imread("Emojis/1F975_color.png")
-
-
-"""Resize emojis to 80x80 px"""
-img_emojilove=cv2.resize(img_emojilove,(int(80),int(80)))
-img_emojitogune=cv2.resize(img_emojitogune,(int(80),int(80)))
-img_emojiteeth=cv2.resize(img_emojiteeth,(int(80),int(80)))
-img_emojicry=cv2.resize(img_emojicry,(int(80),int(80)))
-img_emojicrazy=cv2.resize(img_emojicrazy,(int(80),int(80)))
-img_emojimoulth=cv2.resize(img_emojimoulth,(int(80),int(80)))
-img_emojihappy=cv2.resize(img_emojihappy,(int(80),int(80)))
-img_emojikiss=cv2.resize(img_emojikiss,(int(80),int(80)))
-img_emojiangry=cv2.resize(img_emojiangry,(int(80),int(80)))
-img_emojilol=cv2.resize(img_emojilol,(int(80),int(80)))
-img_emojihot=cv2.resize(img_emojihot,(int(80),int(80)))
 
 
 """add emojis to dict"""
@@ -126,6 +125,11 @@ emojis[8]=img_emojiangry
 emojis[9]=img_emojilol
 emojis[10]=img_emojihot
 
+"""Resize emojis to (REZISE_PX x REZISE_PX) px"""
+for e in range(0,len(emojis)):
+    emojis[e] = cv2.resize(emojis[e],(int(REZISE_PX),int(REZISE_PX)))
+
+
 # stores the previous corners of the marker
 prev_res=[]
 
@@ -136,7 +140,7 @@ try:
 except:
 	print("Please install module opencv-contrib-python via pip!")
 	exit()
-imgemoji= np.zeros([80,80,3])
+imgemoji= np.zeros([REZISE_PX,REZISE_PX,3])
 
 
 """starting loop ☺ """
@@ -168,7 +172,7 @@ while(True):
         # find center position
         center=getCenter(prev_res[0][0])
         # add emoji to image
-        scale=(getSize(prev_res[0][0])/80) * 3 
+        scale=(getSize(prev_res[0][0])/REZISE_PX) * SCALE
         frame=emojiOverlay(frame , img_emoji , pos=center,scale=scale)
 
     # make emoji motion smooth in case of errors in detecting markers
@@ -181,19 +185,28 @@ while(True):
                     # find center position
                     center=getCenter(marker)
                     
-                    scale=(getSize(marker)/80) * 2
+                    scale=(getSize(marker)/REZISE_PX) * SCALE
                     frame=emojiOverlay(frame , img_emoji , pos=center,scale=scale)
                     break
 
     cv2.imshow('Webcam',frame)
     
     """press q to stop webcam recording"""
+    """press w to delete emoji overlay"""
+    """press + to increae size of the emoji"""
+    """press - to decreae size of the emoji"""
     k = cv2.waitKey(1) % 256
 
     if k == ord('q'):
         break
+    elif k == ord('+'):
+        SCALE+=0.5
+    elif k == ord('-'):
+        SCALE-=0.5
+        if SCALE<=0:
+            SCALE=0.5
     else:
-        """press w to delete emoji overlay"""
+        
         if k == ord('w'):
             imgindex = -1
         """press 0 to 9 or ß or - to add overlayed emoji"""

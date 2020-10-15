@@ -1,7 +1,11 @@
-# PCL-Button-Feedback
+# Webcam Augmentation with Python and ArUco Markers
+This repository demonstrates how easy we can bring emotions back to video chat programs when wearing face masks.
+Imagine you are in an important video meeting while you are at a public place or a train where face masks are mandatory. You could be misunderstood as you have limited opportunities to express your emotions.
+By attaching an ArUco marker to your face mask and using my Python script you can enhance your . 
 
 
-## OBS + Virtual-Camera-Plugin Tutorial
+
+## Before you start
 In diesem Abschnitt soll das Setup für eine virtuelle Kamera beschrieben werden.
 
 1. Zunächst muss folgendes installiert werden:

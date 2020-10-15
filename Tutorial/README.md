@@ -44,7 +44,7 @@ Navigate to **Tools → Virtual Camera** in the  main window of OBS Studio. If y
 A new window appears. Select the target camera OBS-Camera2 as shown below. Then, press Start and close this window.
 ![Step 8](/Tutorial/Step_08.jpg)
 
-At the bottom on the main window you should see now an entry of the recorded window in Sources. Press the right mouse button and select filters.
+At the bottom on the main window you should see now an entry of the recorded window in Sources. Press the right mouse button and select Filters.
 ![Step 9](/Tutorial/Step_09.jpg)
 
 A new window appears in which you press the + on the right bottom corner. Then select the VirtualCam.
