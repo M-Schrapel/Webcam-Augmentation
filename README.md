@@ -8,14 +8,15 @@ I used this script to teach my students basics of augmented reality.
 ![Teaser](Tutorial/Teaser.jpg)
 
 ## Howto start
-    * [Read the Tutorial](Tutorial/README.md))
-    * Print and cut out the ArUco marker 
-    * Attach it
+- [Read the Tutorial](Tutorial/README.md))
+- Print the ArUco marker
+- Cut out the marker with a white frame
+- Attach the marker
 	
 ![ArUco Marker](ArUco_marker.jpg)
 
 	
 ##
-![HCI Group](/Institute.png)
+![HCI Group](https://github.com/M-Schrapel/Public-AR-Booksearch/blob/master/Institute.png)
 
 This repository is provided by the Human-Computer Interaction Group at the University Hannover, Germany. For inquiries, please contact maximilian.schrapel@hci.uni-hannover.de
