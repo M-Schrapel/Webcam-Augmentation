@@ -214,7 +214,7 @@ while(True):
             if k == ord(str(i)):
                 imgindex=i
                 break;
-        if k == ord('ß') or k == ord('-'): # german and english keyboard layout
+        if k == ord('ß') or k == ord('_'): # german and english keyboard layout
             imgindex = 10
             
 
