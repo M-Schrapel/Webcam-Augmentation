@@ -61,9 +61,6 @@ $ python emoji_webcam.py
 
 Everything should work now. By bringing the Phyton window to the front you can augment the webcam stream. Use the ArUco marker with the green and black color to make movements smooth. 
 
-<a href="url"><img src="ArUco_marker.jpg" align="center" height="100" width="100" ></a>
-
-
 ##
 ![HCI Group](Tutorial/Institute.png)
 
