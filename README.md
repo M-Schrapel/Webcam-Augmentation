@@ -13,6 +13,8 @@ I used this script to teach my students basics of augmented reality.
 - Cut out the marker with a white frame
 - Attach the marker
 	
+<a href="url"><img src="ArUco_marker.jpg" align="center" height="100" width="100" ></a>
+
 ![ArUco Marker](ArUco_marker.jpg)
 
 	
