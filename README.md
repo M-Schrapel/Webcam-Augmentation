@@ -21,15 +21,14 @@ I used this script to teach my students basics of augmented reality. The emojis 
 
 ## Controls
 
-```
-Key  | Function
-------------- | -------------
-0 to 9  | Overlay emoji
-+  | Increase size of emoji
--  | Decrease size of emoji
-w  | Stop overlaying emoji
-q  | Stop script
-```
+
+| Key  | Function |
+| ------------- | ------------- |
+| 0 to 9  | Overlay emoji |
+| +  | Increase size of emoji |
+| -  | Decrease size of emoji |
+| w  | Stop overlaying emoji |
+| q  | Stop script |
 
 	
 ##
