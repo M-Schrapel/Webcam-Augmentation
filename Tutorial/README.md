@@ -22,7 +22,7 @@ After installing OBS Studio open a terminal, download the repository and start t
 ```sh
 $ git clone https://github.com/M-Schrapel/Webcam-Augmentation.git
 $ cd Webcam-Augmentation
-$ python .\emoji_webcam.py
+$ python emoji_webcam.py
 ```
 If you have any errors check if you have installed the right modules.
 ```sh
@@ -56,15 +56,15 @@ On the right of this window, you can now set up the virtual camera. Select the t
 Start your preferred video chat program and select the OBS-Camera.
 If your program is not able to find a camera stop the Python window by pressing q, search for camera in your video chat program again, select the OBS-Camera and restart the Python script.
 ```sh
-$ python .\emoji_webcam.py
+$ python emoji_webcam.py
 ```
 
-Everything should work now. By bringing the Phyton window to the front you can augment the webcam stream. Use the ArUco marker with the green and black color to make movements smooth.
+Everything should work now. By bringing the Phyton window to the front you can augment the webcam stream. Use the ArUco marker with the green and black color to make movements smooth. 
 
-![ArUco Marker](ArUco_marker.jpg)
+<a href="url"><img src="ArUco_marker.jpg" align="center" height="100" width="100" ></a>
 
 
 ##
 ![HCI Group](Tutorial/Institute.png)
 
-This repository is provided by the Human-Computer Interaction Group at the University Hannover, Germany. For inquiries, please contact maximilian.schrapel@hci.uni-hannover.de
+This repository is provided by the Human-Computer Interaction Group at the University Hannover, Germany. For inquiries, please contact Maximilian Schrapel maximilian.schrapel@hci.uni-hannover.de
