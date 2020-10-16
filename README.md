@@ -17,6 +17,6 @@ I used this script to teach my students basics of augmented reality.
 
 	
 ##
-![HCI Group](https://github.com/M-Schrapel/Public-AR-Booksearch/blob/master/Institute.png)
+![HCI Group](Tutorial/Institute.png)
 
 This repository is provided by the Human-Computer Interaction Group at the University Hannover, Germany. For inquiries, please contact maximilian.schrapel@hci.uni-hannover.de
