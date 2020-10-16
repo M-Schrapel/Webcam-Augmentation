@@ -21,7 +21,7 @@ I used this script to teach my students basics of augmented reality. The emojis 
 
 ## Controls
 
-
+```
 Key  | Function
 ------------- | -------------
 0 to 9  | Overlay emoji
@@ -29,7 +29,7 @@ Key  | Function
 -  | Decrease size of emoji
 w  | Stop overlaying emoji
 q  | Stop script
-
+```
 
 	
 ##
