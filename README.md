@@ -2,7 +2,7 @@
 
 This repository demonstrates how easy we can bring emotions back to video chat programs when wearing face masks.
 Imagine you are in an important video meeting while you are at a public place or a train where face masks are mandatory. You could be misunderstood as you have limited opportunities to express your emotions.
-By attaching an ArUco marker to your face mask and using my python script, you can easily enhance your emotions. The [tutorial](Tutorial/README.md) explains how you can use [OBS Studio](https://obsproject.com/) to augment your webcam stream with any video chat software on your PC.
+By attaching an ArUco marker to your face mask and using my python script, you can easily enhance your emotions. The [tutorial](Tutorial/README.md) explains how you can use [OBS Studio](https://obsproject.com/) to augment your webcam stream in any video chat software on your PC.
 I used this script to teach my students basics of augmented reality. The emojis were taken from [OpenMoji](https://openmoji.org/).
 
 ![Teaser](Tutorial/Teaser.jpg)
