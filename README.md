@@ -1,45 +1,21 @@
 # Webcam Augmentation with Python and ArUco Markers
+
 This repository demonstrates how easy we can bring emotions back to video chat programs when wearing face masks.
 Imagine you are in an important video meeting while you are at a public place or a train where face masks are mandatory. You could be misunderstood as you have limited opportunities to express your emotions.
-By attaching an ArUco marker to your face mask and using my Python script you can enhance your . 
+By attaching an ArUco marker to your face mask and using my python script, you can easily enhance your emotions. 
+I used this script to teach my students basics of augmented reality.
 
+![Teaser](Tutorial/Teaser.jpg)
 
+## Howto start
+    * [Read the Tutorial](Tutorial/README.md))
+    * Print and cut out the ArUco marker 
+    * Attach it
+	
+![ArUco Marker](ArUco_marker.jpg)
 
-## Before you start
-In diesem Abschnitt soll das Setup für eine virtuelle Kamera beschrieben werden.
+	
+##
+![HCI Group](/Institute.png)
 
-1. Zunächst muss folgendes installiert werden:
-    * **OBS**: https://obsproject.com/de
-    * **OBS virtual-camera-plugin**: https://obsproject.com/forum/resources/obs-virtualcam.949/
-        * ___Hinweis___: Bei der Installation des Plugins kann die Anzahl der virtuellen Kameras bei 1 gelassen werden.
-        
-            ![](readme%20images/install.PNG)
-    
-2. Python-Skript ([detector.py](https://github.com/felixortmann/PCL-Button-Feedback/blob/master/detector.py)) starten. 
-Es muss eventuell der VideoCapture-Parameter angepasst werden, damit die
-korrekte Kamera ausgewählt wird. Es sollte sich ein Fenster öffnen mit dem augmentierten Webcamstream.
-3. OBS starten. Neue Quelle hinzufügen (__Quelle (rechtsklick) → Hinzufügen → Fensteraufnahme__).
-Name für das Fenster auswählen oder direkt bestätigen.
-
-    ![quelle](readme%20images/quelle.PNG)
-
-4. Im neuen Fenster das OpenCV Fenster des Python-Skripts auswählen (Hier: __[python.exe] frame__). Bestätigen.
-
-    ![window](readme%20images/window.PNG)
-
-5. Obere Taskleiste: __Werkzeuge → VirtualCam__. Target Camera auf ***OBS-Camera2*** setzen. Klick auf **Start**.
-
-    ![](readme%20images/obscam2.PNG)
-    
-6. Rechtsklick auf die in Schritt 3 neue Quelle/Fensteraufnahme, dann auf **Filter**.
-
-    ![](readme%20images/filter.PNG)
-    
-7. Im neuen Fenster rechtsklick auf den **Effektfilter → Hinzufügen → VirtualCam**. Hier unter **Target Camera: OBS-Camera**
-auswählen und starten. Das wird der Name für die Videokonferenzen sein.
-
-    ![](readme%20images/obscam1.PNG)
-    
-8. Beliebiges Videokonferenzsoftware öffnen und als Webcam OBS-Camera auswählen, z.B. BBB.
-
-    ![](readme%20images/bbb.PNG)
+This repository is provided by the Human-Computer Interaction Group at the University Hannover, Germany. For inquiries, please contact maximilian.schrapel@hci.uni-hannover.de
